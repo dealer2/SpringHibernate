@@ -18,6 +18,7 @@
 	<bean id="facesContextListener"
 		class="org.springframework.faces.webflow.FlowFacesContextLifecycleListener" />
 
+	<!-- Executes flows: the central entry point into the Spring Web Flow system -->
 	<webflow-config:flow-executor id="flowExecutor">
 		<webflow-config:flow-execution-listeners>
 			<webflow-config:listener ref="jpaFlowExecutionListener" />
@@ -25,12 +26,14 @@
 		</webflow-config:flow-execution-listeners>
 	</webflow-config:flow-executor>
 
+	<!-- The registry of executable flow definitions -->
 	<webflow-config:flow-registry id="flowRegistry"
 		flow-builder-services="facesFlowBuilderServices" base-path="/WEB-INF/flows">
 		<webflow-config:flow-location-pattern
 			value="/**/*-flow.xml" />
 	</webflow-config:flow-registry>
 
+	<!-- Configures the Spring Web Flow JSF integration -->
 	<faces:flow-builder-services
 		id="facesFlowBuilderServices" development="true" />
 
