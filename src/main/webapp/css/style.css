@@ -79,3 +79,8 @@
 .ui-widget-overlay {
 	background: none !important;
 }
+
+.ui-password-panel {
+font-size: 11px;
+}
+
