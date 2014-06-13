@@ -10,7 +10,23 @@ import ua.com.crm.entity.UserEntity;
  *
  */
 public interface UserDao extends GenericDao<UserEntity, Long> {
-	
+	/**
+     * Queries database for user name availability
+     *
+     * @param userName
+     * @return true if available
+     */
+    public boolean checkAvailable(String userName);
+    
+    /**
+     * Queries user by userName
+     *
+     * @param userName
+     * @return User entity
+     */
+    
+    public UserEntity loadUserByUserName (String userName);
+
 	
 
 }
